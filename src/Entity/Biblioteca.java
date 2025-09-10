@@ -18,13 +18,25 @@ public class Biblioteca
         this.livros.add( livro );
     }
 
-    public List<Livro> listarLivros()
+    public void listarLivros()
     {
         for( Livro livro : livros )
         {
             if( livro.isDisponivel() )
             {
-                return livros;
+                System.out.println( livro.getId() );
+                System.out.println( livro.getTitulo() );
+            }
+        }
+    }
+
+    public Livro buscarLivroPorId( int id )
+    {
+        for( Livro livro : livros )
+        {
+            if( livro.getId() == id )
+            {
+                return livro;
             }
         }
         return null;
